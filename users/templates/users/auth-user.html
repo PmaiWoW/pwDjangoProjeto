@@ -1,0 +1,15 @@
+{% extends 'users/base.html' %}
+
+{% block main %}
+    <h1>Welcome, {{ request.user.first_name }}</h1>
+    <ul>
+        <li>Username: {{ request.user.username }}</li>
+        <li>Email: {{ request.user.email }}</li>
+    </ul>
+
+    <ul>
+        <li><a href="{% url 'website:agents' %}">Go to contacts list</a></li>
+    </ul>
+
+    <a href="{% url 'users:logout' %}"><button type="button" class="btn btn-warning" style="color: black">Log Out</button></a>
+{% endblock %}

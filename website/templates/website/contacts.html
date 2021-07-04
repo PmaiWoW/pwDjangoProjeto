@@ -1,0 +1,43 @@
+<!-- contacts.html -->
+
+{% extends 'website/base.html' %}
+
+{% load static %}
+
+{% block header %}
+    <img src="{% static 'website/images/header-img.png' %}" alt="personimg">
+    <p>
+        &#x1F3AE John Doe, Junior Game Developer &#x1F3AE
+        <br><br>
+        temporaryemail.pw@gmail.com
+    </p>
+{% endblock %}
+
+{% block main %}
+    <section>
+        <form id="contact-form" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <fieldset>
+                <legend>Contact me</legend>
+                <section>
+                    {{ agentForm }}
+                    {{ messageForm }}
+                </section>
+            </fieldset>
+            <input type="image" src="{% static 'website/images/submit.png' %}" alt="Submit">
+        </form>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    <a href="https://www.artstation.com/" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">view_in_ar</i>
+    </a>
+    <a href="contacts">
+        <i class="material-icons">email</i>
+    </a>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">photo_camera</i>
+    </a>
+{% endblock %}

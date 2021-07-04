@@ -1,0 +1,37 @@
+<!-- agents.html -->
+
+{% extends 'website/secondary-base.html' %}
+
+{% load static %}
+
+{% block header %}
+    <img src="{% static 'website/images/header-img.png' %}" alt="personimg">
+    <p>
+        &#x1F3AE John Doe, Junior Game Developer &#x1F3AE
+        <br><br>
+        temporaryemail.pw@gmail.com
+    </p>
+{% endblock %}
+
+{% block main %}
+    <p><a href="{% url 'website:agent-add' %}"><button type="button" class="btn btn-primary">Add Agent</button></a>
+        <a href="{% url 'website:message-add' %}"><button type="button" class="btn btn-info">Add Message</button></a></p>
+    {% for agent in agents %}
+            <p>
+                <a href="{% url 'website:agent-messages' agent.id %}"><button type="button" class="btn btn-light">{{ agent.email }}</button></a>
+                <a href="{% url 'website:agent-edit' agent.id %}"><button type="button" class="btn btn-warning">Edit</button></a>
+            </p>
+    {% endfor %}
+{% endblock %}
+
+{% block footer %}
+    <a href="https://www.artstation.com/" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">view_in_ar</i>
+    </a>
+    <a href="contacts">
+        <i class="material-icons">email</i>
+    </a>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">photo_camera</i>
+    </a>
+{% endblock %}

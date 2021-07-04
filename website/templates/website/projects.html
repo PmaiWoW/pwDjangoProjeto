@@ -1,0 +1,49 @@
+<!-- projects.html -->
+
+{% extends 'website/base.html' %}
+
+{% load static %}
+
+{% block header %}
+    <img src="{% static 'website/images/header-img.png' %}" alt="personimg">
+    <p>
+        &#x1F3AE John Doe, Junior Game Developer &#x1F3AE
+        <br><br>
+        temporaryemail.pw@gmail.com
+    </p>
+{% endblock %}
+
+{% block main %}
+    <section class="flex-rowwrap-projects" name="projects">
+        <figure class="flex-project">
+            <a href="bruhh">
+                <img src="{% static 'website/images/bruhh720x480.png' %}">
+            </a>
+            <figcaption>
+                <a href="bruhh">Bruhh!<br>(Windows PC)</a>
+                <details>Itch.io page coming soon!</details>
+            </figcaption>
+        </figure>
+        <figure class="flex-project">
+            <img src="{% static 'website/images/anything-but-dark720x480.png' %}">
+            <figcaption>
+                Anything but Dark<br>(Windows PC/Nintendo Switch)
+                <details>
+                    Unreleased game. Page under construction.
+                </details>
+            </figcaption>
+        </figure>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    <a href="https://www.artstation.com/" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">view_in_ar</i>
+    </a>
+    <a href="contacts">
+        <i class="material-icons">email</i>
+    </a>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">photo_camera</i>
+    </a>
+{% endblock %}

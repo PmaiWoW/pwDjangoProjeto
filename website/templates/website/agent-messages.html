@@ -1,0 +1,43 @@
+<!-- agent-messages.html -->
+
+{% extends 'website/secondary-base.html' %}
+
+{% load static %}
+
+{% block header %}
+    <img src="{% static 'website/images/header-img.png' %}" alt="personimg">
+    <p>
+        &#x1F3AE John Doe, Junior Game Developer &#x1F3AE
+        <br><br>
+        temporaryemail.pw@gmail.com
+    </p>
+{% endblock %}
+
+{% block main %}
+    <p><a href="{% url 'website:agents' %}" class="btn btn-info">Back</a></p>
+    <p>Email: {{ agent }}</p>
+    {% for message in messages %}
+
+        {% if message.agentID == agent %}
+            <section class="message-box">
+                <p>
+                    Subject: {{ message.subject }}
+                    <a href="{% url 'website:message-delete' message.id %}" class="btn btn-warning">Delete</a>
+                </p>
+                <p>{{ message.message }}</p>
+            </section>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+
+{% block footer %}
+    <a href="https://www.artstation.com/" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">view_in_ar</i>
+    </a>
+    <a href="contacts">
+        <i class="material-icons">email</i>
+    </a>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">photo_camera</i>
+    </a>
+{% endblock %}

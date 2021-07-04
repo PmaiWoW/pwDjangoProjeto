@@ -1,0 +1,196 @@
+{% extends 'website/secondary-base.html' %}
+
+{% load static %}
+
+{% block script %}
+    const smallPropPrice = 20;
+    const mediumPropPrice = 35;
+    const largePropPrice = 50;
+    const smallScenarioPrice = 125;
+    const mediumScenarioPrice = 175;
+    const largeScenarioPrice = 250;
+    const weaponPrice = 75;
+    const characterPrice = 150;
+
+    smallPropCount = 0;
+    mediumPropCount = 0;
+    largePropCount = 0;
+    smallScenarioCount = 0;
+    mediumScenarioCount = 0;
+    largeScenarioCount = 0;
+    weaponCount = 0;
+    characterCount = 0;
+
+    totalPrice = 0;
+
+    function updateTotalPrice() {
+        totalPrice = (smallPropPrice * smallPropCount)
+            + (mediumPropPrice * mediumPropCount)
+            + (largePropPrice * largePropCount)
+            + (smallScenarioPrice * smallScenarioCount)
+            + (mediumScenarioPrice * mediumScenarioCount)
+            + (largeScenarioPrice * largeScenarioCount)
+            + (weaponPrice * weaponCount)
+            + (characterPrice * characterCount);
+        document.querySelector('#total').innerHTML = "Total: " + totalPrice + "€";
+    }
+
+    function updateItemList() {
+        console.log("start item list update")
+        text = "Selected items:<br>" +
+            "Small props: " + smallPropCount + "&emsp;" +
+            "Medium props: " + mediumPropCount + "&emsp;" +
+            "Large props: "+ largePropCount + "<br>" +
+            "Small scenarios: " + smallScenarioCount + "&emsp;" +
+            "Medium scenarios: " + mediumScenarioCount + "&emsp;" +
+            "Large scenarios: " + largeScenarioCount + "<br>" +
+            "Weapons: " + weaponCount + "&emsp;" +
+            "Characters: " + characterCount;
+
+        document.querySelector('#itemList').innerHTML = text;
+
+        console.log(text)
+    }
+
+    function addItem(item) {
+        switch (item) {
+            case 'smallProp':
+                smallPropCount++;
+                break;
+            case 'mediumProp':
+                mediumPropCount++;
+                break;
+            case 'largeProp':
+                largePropCount++;
+                break;
+            case 'smallScenario':
+                smallScenarioCount++;
+                break;
+            case 'mediumScenario':
+                mediumScenarioCount++;
+                break;
+            case 'largeScenario':
+                largeScenarioCount++;
+                break;
+            case 'weapon':
+                weaponCount++;
+                break;
+            case 'character':
+                characterCount++;
+                break;
+        }
+        updateTotalPrice();
+        updateItemList();
+    }
+
+    function removeItem(item) {
+        switch (item) {
+            case 'smallProp':
+                if (smallPropCount > 0) smallPropCount--;
+                break;
+            case 'mediumProp':
+                if (mediumPropCount > 0) mediumPropCount--;
+                break;
+            case 'largeProp':
+                if (largePropCount > 0) largePropCount--;
+                break;
+            case 'smallScenario':
+                if (smallScenarioCount > 0) smallScenarioCount--;
+                break;
+            case 'mediumScenario':
+                if (mediumScenarioCount > 0) mediumScenarioCount--;
+                break;
+            case 'largeScenario':
+                if (largeScenarioCount > 0) largeScenarioCount--;
+                break;
+            case 'weapon':
+                if (weaponCount > 0) weaponCount--;
+                break;
+            case 'character':
+                if (characterCount > 0) characterCount--;
+                break;
+        }
+        updateTotalPrice();
+        updateItemList();
+    }
+
+    document.addEventListener('DOMContentLoaded',function() {
+        document.querySelectorAll('button[name="add"]').forEach(button => {
+            button.onclick = function() {
+                addItem(this.dataset.item);
+            }
+        });
+        document.querySelectorAll('button[name="remove"]').forEach(button => {
+            button.onclick = function() {
+                removeItem(this.dataset.item);
+            }
+        });
+    });
+{% endblock %}
+
+{% block header %}
+    <img src="{% static 'website/images/header-img.png' %}" alt="personimg">
+    <p>
+        &#x1F3AE John Doe, Junior Game Developer &#x1F3AE
+        <br><br>
+        temporaryemail.pw@gmail.com
+    </p>
+{% endblock %}
+
+{% block main %}
+    <p>All prices presented are a minimum value. Depending on the nature of the order these might increase.</p>
+    <p>All prices include textures and the price might increase as well, depending on their complexity.</p>
+    <br>
+    <p>
+        Small Prop: 20€
+        <button data-item="smallProp" id="smallProp" name="add" style="color:black">Add</button>
+        <button data-item="smallProp" id="smallProp" name="remove" style="color:black">Remove</button>&emsp;
+        Medium Prop: 35€
+        <button data-item="mediumProp" id="mediumProp" name="add" style="color:black">Add</button>
+        <button data-item="mediumProp" id="mediumProp" name="remove" style="color:black">Remove</button>&emsp;
+        Large Prop: 50€
+        <button data-item="largeProp" id="largeProp" name="add" style="color:black">Add</button>
+        <button data-item="largeProp" id="largeProp" name="remove" style="color:black">Remove</button>
+    </p>
+    <p>
+        Small Scenarios: 125€
+        <button data-item="smallScenario" id="smallScenario" name="add" style="color:black">Add</button>
+        <button data-item="smallScenario" id="smallScenario" name="remove" style="color:black">Remove</button>&emsp;
+        Small Scenarios: 175€
+        <button data-item="mediumScenario" id="mediumScenario" name="add" style="color:black">Add</button>
+        <button data-item="mediumScenario" id="mediumScenario" name="remove" style="color:black">Remove</button>&emsp;
+        Small Scenarios: 250€ <button data-item="largeScenario" id="largeScenario" name="add" style="color:black">Add</button>
+        <button data-item="largeScenario" id="largeScenario" name="remove" style="color:black">Remove</button>
+    </p>
+    <p>
+        Weapons: 75€
+        <button data-item="weapon" id="weapon" name="add" style="color:black">Add</button>
+        <button data-item="weapon" id="weapon" name="remove" style="color:black">Remove</button>&emsp;
+        Characters: 150€
+        <button data-item="character" id="character" name="add" style="color:black">Add</button>
+        <button data-item="character" id="character" name="remove" style="color:black">Remove</button>
+    </p>
+    <br>
+    <p id="itemList">
+        Selected items:<br>
+        Small props: 0&emsp;Medium props: 0&emsp;Large props: 0<br>
+        Small scenarios: 0&emsp;Medium scenarios: 0&emsp;Large scenarios: 0<br>
+        Weapons: 0&emsp;Characters: 0
+    </p>
+    <br>
+    <h2 id="total">
+        Total: 0€
+    </h2>
+{% endblock %}
+
+{% block footer %}
+    <a href="https://www.artstation.com/" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">view_in_ar</i>
+    </a>
+    <a href="contacts">
+        <i class="material-icons">email</i>
+    </a>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">photo_camera</i>
+    </a>
+{% endblock %}

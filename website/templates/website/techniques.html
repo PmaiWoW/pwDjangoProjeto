@@ -1,0 +1,353 @@
+<!-- techniques.html -->
+
+{% extends 'website/base.html' %}
+
+{% load static %}
+
+{% block header %}
+    <img src="{% static 'website/images/header-img.png' %}" alt="personimg">
+    <p>
+        &#x1F3AE John Doe, Junior Game Developer &#x1F3AE
+        <br><br>
+        temporaryemail.pw@gmail.com
+    </p>
+{% endblock %}
+
+{% block main %}
+    <h3 style="text-align: center">Used techniques</h3>
+    <table cellspacing="1em" cellpadding="10%" name="techniques-table" >
+        <thead>
+            <tr>
+                <th>Characteristics</th>
+                <th>Techniques</th>
+                <th>Examples</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Layouts</td>
+                <td>
+                    Made use of CSS Grid and CSS Flexbox to build the
+                    pages' layouts (PC, Tablet and Smartphone)
+                </td>
+                <td>
+                    Use of Grids and Flexbox can be  verified in all
+                    pages (e.g: header, main, nav and footer elements),
+                    with the Home page having a different layout from
+                    other pages.
+                </td>
+            </tr>
+            <tr>
+                <td>Responsiveness</td>
+                <td>
+                    Media queries were used to adapt the layout to PC,
+                    tablets and mobile phones, depending on the used
+                    browser's window size.
+                </td>
+                <td>
+                    Use of responsiveness can be verified in every page,
+                    as they all adapt to different sizes.
+                </td>
+            </tr>
+            <tr>
+                <td>Selectors</td>
+                <td>
+                    Universal, type, class, id, attribute and pseudo-class
+                    selectors were used to style the website.
+                </td>
+                <td>
+                    Use of selectors and properties is verified in every
+                    page, for example, the various grid areas used different
+                    flexbox stylings to adapt them to fit the layout as
+                    it was intended to be.
+                </td>
+            </tr>
+            <tr>
+                <td>Tags</td>
+                <td>
+                    HTML5 body, header, nav, main, footer, header, meta,
+                    title, link, a, img, br, p, h2, h3, h4, ul, li, section,
+                    form, fieldset, legend, label, input, textarea,
+                    figure, figcaption, details, iframe, i.
+                </td>
+                <td>
+                    Use of tags is verified in every page. For example,
+                    the 'details' tag is used in the Projects page.
+                </td>
+            </tr>
+            <tr>
+                <td>Models</td>
+                <td>
+                    Use of Django models to store user contact information and
+                    messages, comments and quizzes in the database, tapping into
+                    the info stored when necessary to be displayed, edited or
+                    eliminated.
+                </td>
+                <td>
+                    Use of Django Models is verified in all CRUD operation pages,
+                    the Comments page and the Quiz page.
+                </td>
+            </tr>
+            <tr>
+                <td>Templates</td>
+                <td>
+                    Use of Django templates for every page of the website,
+                    having base HTML files that were extended and added upon
+                    by specific pages' HTML files, making use of Django's
+                    template language to make use of variables passed from
+                    the View into the HTML.
+                </td>
+                <td>
+                    Use of Django Templates is verified in every page of the website.
+                </td>
+            </tr>
+            <tr>
+                <td>Python</td>
+                <td>
+                    Use of the Python programming language with Django to create the
+                    Models and Views that were used in the project.
+                </td>
+                <td>
+                    Use of Python is verified in every page of the website.
+                </td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>
+                    Use of JavaScript to create a Single Page Application (SPA),
+                    in which an API developed by the student was used to create
+                    a web page where the user can simulate the value of an order
+                    for freelance 3D Modeling and Texturing work, while making
+                    use of Events and DOM manipulations, using querySelectors.
+                </td>
+                <td>
+                    Use of JavaScript is verified in the Single Page Application.
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th></th>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <section name="map">
+        <h3>Site map</h3>
+        <figure>
+            <img src="{% static 'website/images/site-map.png' %}">
+            <figcaption style="text-align: center">
+                Map of the website's pages.<br>
+            </figcaption>
+        </figure>
+        <p style="text-align: center">
+            (Pages that no user can see and only contain logic - like the logout page - have been omited)
+        </p>
+    </section>
+
+    <section name="gallery">
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/home.png' %}">
+            <figcaption>Home page</figcaption>
+        </figure>
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/about.png' %}">
+            <figcaption>About page</figcaption>
+        </figure>
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/projects.png' %}">
+            <figcaption>Projects page</figcaption>
+        </figure>
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/bruhh.png' %}">
+            <figcaption>Bruhh! page</figcaption>
+        </figure>
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/contacts.png' %}">
+            <figcaption>Contacts page</figcaption>
+        </figure>
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/techniques.png' %}">
+            <figcaption>Techniques page</figcaption>
+        </figure>
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/quiz.png' %}">
+            <figcaption>Quiz page</figcaption>
+        </figure>
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/do-quiz.png' %}">
+            <figcaption>Play Quiz! page</figcaption>
+        </figure>
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/quiz-scores.png' %}">
+            <figcaption>Quiz Scores page</figcaption>
+        </figure>
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/comments.png' %}">
+            <figcaption>Comments page</figcaption>
+        </figure>
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/add-comment.png' %}">
+            <figcaption>Add Comment page</figcaption>
+        </figure>
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/price-guide.png' %}">
+            <figcaption>Price Guide page</figcaption>
+        </figure>
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/login.png' %}">
+            <figcaption>Login page</figcaption>
+        </figure>
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/auth-user.png' %}">
+            <figcaption>Authenticated User page</figcaption>
+        </figure>
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/agents.png' %}">
+            <figcaption>Agents page</figcaption>
+        </figure>
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/add-agent.png' %}">
+            <figcaption>Add Contact page</figcaption>
+        </figure>
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/add-message.png' %}">
+            <figcaption>Add Message page</figcaption>
+        </figure>
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/agent-messages.png' %}">
+            <figcaption>Agent Messages page</figcaption>
+        </figure>
+        <figure>
+            <img src="{% static 'website/images/site-screenshots/edit-agent.png' %}">
+            <figcaption>Edit Agent page</figcaption>
+        </figure>
+    </section>
+
+    <h3 style="text-align: center">Used technologies</h3>
+    <table cellspacing="1em" cellpadding="10%" name="techniques-table">
+        <thead>
+            <tr>
+                <th>Characteristics</th>
+                <th>Techniques</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>HTML</td>
+                <td>
+                    HTML foi usado para criar a estrutura das várias
+                    páginas, de forma a dispor o seu conteúdo.
+                </td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td>
+                    CSS foi usado para criar a estilização das várias
+                    páginas, de forma a criar uma página visualmente
+                    apelativa.
+                </td>
+            </tr>
+            <tr>
+                <td>Django</td>
+                <td>
+                    Django foi a framework usada para o projeto.
+                    Foi feito uso de Models, Templates e Views de
+                    forma a que com os Models como interfaces para os
+                    dados a serem guardados na base de dados, com as
+                    Templates como interface para o utilizar e com as
+                    Views como a ligação entre os dados do Model e as
+                    Templates, lidando com toda a lógica de negócio
+                    por detrás da aplicação web.
+                </td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>
+                    JavaScript foi usado para criar uma Single
+                    Application Page que faz uso de uma API
+                    desenvolvida por nós e de eventps e
+                    manipulações de DOM para criar uma
+                    pequena aplicação para simular o preçário
+                    de trabalho freelance (preços inventados).
+                </td>
+            </tr>
+            <tr>
+                <td>GitHub</td>
+                <td>
+                    Git e GitHub foram usados para controlo de versão,
+                    contendo o projeto num repositório remote que pode
+                    ser acedido por utilizadores.
+                </td>
+            </tr>
+            <tr>
+                <td>Heroku</td>
+                <td>
+                    Heroku foi usado como o host para a aplicação web
+                    desenvolvida na cadeira, de forma a que esta esteja
+                    hospedada num servidor que pode ser acedido a qualquer
+                    altura.
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th></th>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+    <br>
+    <section id="inventory">
+        <table cellspacing="1em" cellpadding="10%" name="techniques-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Web pages</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>Images</td>
+                    <td>31 (Counting software icons)</td>
+                </tr>
+                </tr>
+                <tr>
+                    <td>External links</td>
+                    <td>4</td>
+                </tr>
+                </tr>
+                <tr>
+                    <td>Videos</td>
+                    <td>2</td>
+                </tr>
+                </tr>
+                <tr>
+                    <td>Animations</td>
+                    <td>3</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section name="intro-video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/3YT12kQ1o2U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    <a href="https://www.artstation.com/" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">view_in_ar</i>
+    </a>
+    <a href="contacts">
+        <i class="material-icons">email</i>
+    </a>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">photo_camera</i>
+    </a>
+{% endblock %}

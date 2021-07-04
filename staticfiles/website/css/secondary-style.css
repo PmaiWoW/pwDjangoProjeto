@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v81/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings:"liga";
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    src: url("../fonts/Roboto-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: italic;
+    src: url("../fonts/Roboto-Italic.ttf")
+}
+
+/* Set default font, box sizing, text color, margin and padding for all content */
+* {
+    font-family: "Roboto";
+    box-sizing: border-box;
+    color: whitesmoke;
+    padding: 0;
+    margin: 0;
+}
+
+main a {
+    color: rgb(255, 190, 125);
+    text-decoration: none;
+}
+
+a:link, .nav a:visited {
+    color: whitesmoke;
+}
+
+a:hover {
+    animation-name: link-text-color-hover;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+}
+
+/* Apply background image to all pages' bodies*/
+body {
+    background-image: url("../images/background.png");
+    background-attachment: fixed;
+    position: sticky;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    gap: 5vw;
+    bottom: 0px;
+    width: 100%;
+    color: white;
+    background: linear-gradient(rgb(45, 45, 45) 15%, rgb(35, 35, 35) 85%);
+}
+
+nav {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(90deg, rgb(35, 35, 35) 15%, rgb(45, 45, 45) 85%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    gap: 10%;
+    background: linear-gradient(rgb(35, 35, 35) 15%, rgb(50, 50, 50) 85%);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgb(35, 35, 35) 15%, rgb(40, 40, 40) 85%);
+    height: 4vw;
+}
+
+main {
+    box-sizing: border-box;
+    /*background-color: gray;*/
+    margin: 5vh;
+}
+
+main section[class="message-box"] {
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: gray;
+    border-width: 0.2em;
+    padding: 0.5em;
+}
+
+@media only screen and (max-width: 640px) {
+    h1 {
+        font-size: 1em;
+    }
+
+    main {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    h1 {
+        font-size: 1.25em;
+    }
+
+    main {
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    main {
+        font-size: 1em;
+    }
+}

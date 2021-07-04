@@ -1,0 +1,908 @@
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v81/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings:"liga";
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    src: url("../fonts/Roboto-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: italic;
+    src: url("../fonts/Roboto-Italic.ttf")
+}
+
+/* Set default font, box sizing, text color, margin and padding for all content */
+* {
+    font-family: "Roboto";
+    box-sizing: border-box;
+    color: whitesmoke;
+    padding: 0;
+    margin: 0;
+}
+
+main a {
+    color: rgb(255, 190, 125);
+    text-decoration: none;
+}
+
+a:link, .nav a:visited {
+    color: whitesmoke;
+}
+
+a:hover {
+    animation-name: link-text-color-hover;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+}
+
+/* Apply background image to all pages' bodies*/
+body {
+    background-image: url("../images/background.png");
+    background-attachment: fixed;
+    position: sticky;
+}
+
+/* Mobile media query (821px is the largest phone screen size found) */
+@media only screen and (max-width: 640px)
+{
+    /* Home page grid layout */
+    .home-grid-container
+    {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 4fr 3fr 25fr 2fr;
+        gap: 0px 0px;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "footer";
+    }
+
+
+    /* Subpage grid layout */
+    .subpage-grid-container {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 10fr 1fr;
+        gap: 0px 0px;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "footer";
+    }
+
+    table {
+        font-size: 0.95em;
+    }
+
+    body[name*="subpage"] header img {
+        max-height: 12vh;
+        width: auto;
+    }
+
+    body[name*="subpage"] header {
+        background: linear-gradient(rgb(35, 35, 35) 15%, rgb(40, 40, 40) 85%);
+    }
+
+    body[name*="subpage"] nav {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    body[name*="subpage"] main {
+        background: linear-gradient(rgb(40, 40, 40) 0%, rgb(60, 60, 60));
+    }
+
+    .flex-rowwrap {
+        flex-direction: row;
+        font-size: 0.9em;
+        gap: 3vw;
+    }
+
+    .flex-project img {
+        width: 50vw;
+        transition: width, height 0.5s, 0.5s;
+    }
+
+    .flex-project img:hover {
+        width: 60vw;
+        height: auto;
+    }
+
+    .flex-rowwrap-projects {
+        flex-direction: column;
+    }
+
+    fieldset > section textarea {
+        width: 80vw;
+        height: 35vh;
+    }
+
+    form input[alt="Submit"] {
+        display: flex;
+        width: 25vw;
+    }
+
+    body[name*="home"] header {
+        grid-area: header;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(rgb(25, 25, 25) 15%, rgb(40, 40, 40) 85%);
+    }
+
+    body[name*="home"] nav {
+        grid-area: nav;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        min-height: 100%;
+        gap: 2%;
+        background: linear-gradient(rgb(40, 40, 40) 15%, rgb(50, 50, 50) 85%);
+    }
+
+    body[name*="home"] main {
+        grid-area: main;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(rgb(50, 50, 50) 0%, rgb(70, 70, 70) 50%);
+    }
+
+    body[name*="home"] header img {
+        max-width: 18vw;
+        height: auto;
+    }
+
+    body[name*="showcase"] main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1vh;
+        font-size: 0.9em;
+    }
+
+    section[name="project-intro"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    section[name="project-intro"] section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    section[name="project-intro"] h2 {
+        padding-bottom: 0.4em;
+        text-decoration: underline;
+        text-decoration-style: solid;
+        text-underline-offset: 0.1em;
+    }
+
+    section[name="project-intro"] iframe {
+        width: 100%;
+    }
+
+    section[name="project-info"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    section[name="project-info"] section[name="responsibility"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* Tablet media query */
+@media only screen and (min-width: 640px) {
+    /* Home page grid layout */
+    .home-grid-container {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr 8fr 1fr;
+        gap: 0% 0%;
+        grid-template-areas:
+            "header nav"
+            "main main"
+            "footer footer";
+    }
+
+    footer {
+        grid-area: footer;
+    }
+
+    /* Subpage grid layout */
+    .subpage-grid-container {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        grid-template-columns: 1fr 10fr;
+        grid-template-rows: 1fr 10fr 1fr;
+        gap: 0px 0px;
+        grid-template-areas:
+            "header header"
+            "nav main"
+            "footer footer";
+    }
+
+    body[name*="subpage"] header {
+        width: 100%;
+    }
+
+    body[name*="subpage"] header img {
+        max-height: 12vh;
+        width: auto;
+    }
+
+    body[name*="subpage"] nav {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background: linear-gradient(90deg, rgb(35, 35, 35) 15%, rgb(45, 45, 45) 85%);
+    }
+
+    body[name*="subpage"] main {
+        background: linear-gradient(90deg, rgb(45, 45, 45) 0%, rgb(60, 60, 60) 50%,
+            rgb(45, 45, 45) 100%);
+    }
+
+    .flex-rowwrap {
+        flex-direction: row;
+        font-size: 0.9em;
+        gap: 5%;
+    }
+
+    .flex-project img {
+        width: 50vw;
+        transition: width, height 0.5s, 0.5s;
+    }
+
+    .flex-project img:hover {
+        width: 60vw;
+        height: auto;
+    }
+
+    .flex-rowwrap-projects {
+        flex-direction: column;
+    }
+
+    fieldset > section textarea {
+        width: 60vw;
+        height: 37.5vh;
+    }
+
+    form input[alt="Submit"] {
+        display: flex;
+        width: 22.5vw;
+    }
+
+    body[name*="home"] header {
+        grid-area: header;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(rgb(35, 35, 35) 15%, rgb(50, 50, 50) 85%);
+    }
+
+    body[name*="home"] nav {
+        grid-area: nav;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        min-height: 100%;
+        gap: 2%;
+        background: linear-gradient(rgb(35, 35, 35) 15%, rgb(50, 50, 50) 85%);
+    }
+
+    body[name*="home"] main {
+        grid-area: main;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(rgb(50, 50, 50) 0%, rgb(70, 70, 70) 50%);
+    }
+
+    body[name*="home"] header img {
+        width: 12.5vw;
+        height: auto;
+    }
+
+    body[name*="showcase"] main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1vh;
+        font-size: 0.95em;
+    }
+
+    section[name="project-intro"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    section[name="project-intro"] section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    section[name="project-intro"] h2 {
+        padding-bottom: 0.5em;
+        text-decoration: underline;
+        text-decoration-style: solid;
+        text-underline-offset: 0.2em;
+    }
+
+    section[name="project-intro"] iframe {
+        max-width: 100%;
+    }
+
+    section[name="project-info"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    section[name="project-info"] section[name="responsibility"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* Home page grid layout */
+    .home-grid-container {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 1fr 6fr 0.5fr;
+        gap: 0% 0%;
+        grid-template-areas:
+            "header main"
+            "nav main"
+            "footer footer";
+    }
+
+    footer {
+        grid-area: footer;
+    }
+
+    /* Subpage page grid layout */
+    .subpage-grid-container {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 0px 0px;
+        grid-template-areas:
+            "header header header nav nav nav"
+            ". main main main main ."
+            ". main main main main ."
+            ". main main main main ."
+            ". main main main main ."
+            ". main main main main ."
+            ". main main main main ."
+            ". main main main main ."
+            ". main main main main ."
+            ". main main main main ."
+            ". main main main main ."
+            "footer footer footer footer footer footer";
+    }
+
+    body[name*="subpage"] header img {
+        max-height: 12vh;
+        width: auto;
+    }
+
+    body[name*="subpage"] header {
+        background: linear-gradient(rgb(35, 35, 35) 15%, rgb(45, 45, 45) 85%);
+    }
+
+    body[name*="subpage"] nav {
+        flex-direction: row;
+        justify-content: space-between;
+        background: linear-gradient(rgb(35, 35, 35) 15%, rgb(45, 45, 45) 85%);
+    }
+
+    body[name*="subpage"] main {
+        background: linear-gradient(rgb(45, 45, 45) 0%, rgb(60, 60, 60) 50%,
+            rgb(45, 45, 45) 100%);
+    }
+
+    .flex-rowwrap {
+        flex-direction: row;
+        font-size: 1em;
+        gap: 5%;
+    }
+
+    .flex-project img {
+        width: 22.5vw;
+        transition: width, height 0.5s, 0.5s;
+    }
+
+    .flex-project img:hover {
+        width: 25vw;
+        height: auto;
+    }
+
+    .flex-rowwrap-projects {
+        flex-direction: row;
+    }
+
+    fieldset > section textarea {
+        width: 50vw;
+        height: 32.5vh;
+    }
+
+    form input[alt="Submit"] {
+        display: flex;
+        width: 12.5vw;
+    }
+
+    body[name*="home"] header {
+        grid-area: header;
+        display: flex;
+        visibility: visible;
+        justify-content: center;
+        align-items: center;
+        min-width: 12.5vw;
+        min-height: 20vh;
+        background: linear-gradient(90deg, rgb(35, 35, 35) 15%, rgb(50, 50, 50) 85%);
+    }
+
+    body[name*="home"] nav {
+        grid-area: nav;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-height: 100vh;
+        gap: 7.5%;
+        background: linear-gradient(90deg, rgb(35, 35, 35) 15%, rgb(50, 50, 50) 85%);
+    }
+
+    body[name*="home"] main {
+        grid-area: main;
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-flow: row wrap;
+        background: linear-gradient(90deg, rgb(50, 50, 50) 0%, rgb(70, 70, 70) 50%);
+    }
+
+    body[name*="home"] header img {
+        width: 60%;
+        height: auto;
+    }
+
+    body[name*="showcase"] main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6vh;
+    }
+
+    section[name="project-intro"] {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 3.5vw;
+    }
+
+    section[name="project-intro"] section {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+    }
+
+    section[name="project-intro"] h2 {
+        padding-bottom: 1vw;
+        text-decoration: underline;
+        text-decoration-style: solid;
+        text-underline-offset: 0.2em;
+    }
+
+    section[name="project-intro"] iframe {
+        max-width: 50%;
+    }
+
+    section[name="project-info"] {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 9vw;
+    }
+
+    section[name="project-info"] section[name="info"], section[name="project-info"] section[name="responsibility"] {
+        width: 40%;
+    }
+
+    section[name="project-info"] section[name="responsibility"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* Show scrollbar on main of subpages if height is under 600px, as the content
+needed in the various of these cannot be properly displayed if no scrollbar is
+accessible (the nature of the content demands it is in the same page, but the
+quantity is high) */
+@media only screen and (max-height: 600px)
+{
+    body[name*="subpage"] main {
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+    }
+}
+
+/* Hide the scrollbar that was displayed for the reasons mentioned above if
+the height is over 600px (except for the about main, as that page has a lot
+of content */
+@media only screen and (min-height: 600px)
+{
+    body[name*="subpage"] main {
+        overflow-y: none;
+        -ms-overflow-style: none;
+    }
+}
+
+body[name*="subpage"]  nav {
+    grid-area: nav;
+    display: flex;
+    padding: 0 5vw 0 5vw;
+    align-items: center;
+}
+
+body[name*="subpage"] header {
+    grid-area: header;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6vw;
+    padding-left: 5vw;
+}
+
+body[name*="subpage"] main {
+    grid-area: main;
+    padding: 1vh 5vw 3vh 5vw
+}
+
+body[name*="subpage"] main[name*="about"], body[name*="subpage"] main[class^="project"], body[name*="subpage"] main[name*="techniques"], body[name*="subpage"] main[name*="contacts"] {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+}
+
+body[name*="subpage"] footer {
+    grid-area: footer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    padding: 1.5vw;
+    border-color: rgb(77, 77, 77);
+    border-width: 0.2em;
+}
+
+fieldset > legend {
+    text-align: center;
+    padding: 0 0.5em 0 0.5em;
+}
+
+fieldset > section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+fieldset > section input {
+    text-align: center;
+    width: 27.5em;
+    color: black;
+    border-style: solid;
+    border-color: rgb(63, 63, 63);
+    border-width: 0.25em;
+    padding: 0.1em;
+}
+
+fieldset > section textarea {
+    color: black;
+    border-style: solid;
+    border-color: rgb(63, 63, 63);
+    border-width: 0.25em;
+    padding: 0.3em;
+}
+
+.project-container {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.flex-project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1vh;
+}
+
+.flex-rowwrap a {
+    text-decoration: none;
+}
+
+.flex-project img {
+    height: auto;
+}
+
+.flex-project figcaption {
+    text-align: center;
+    font-size: 0.85em;
+    padding: 1em;
+}
+
+body[name|="contacts"] section p {
+    padding-bottom: 0.5em;
+}
+
+main[name="contacts-main"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body[name*="home"] main img {
+    max-width: 80%;
+    height: auto;
+}
+
+main h3 {
+    margin: 2em 0 1em 0;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-underline-offset: 0.2em;
+}
+
+main h4 {
+    margin: 0 0 1em 0;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+main > p {
+    margin: 0 0 0.5em 0;
+}
+
+main ul {
+    padding: 0 0 0 3vw;
+    margin: 0.5em 0 0.5em 0;
+}
+
+main li {
+    padding-bottom: 0.5vh;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav a:link, .nav a:visited {
+    color: whitesmoke;
+}
+
+nav a:hover {
+    animation-name: nav-text-color-hover;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+}
+
+.flex-rowwrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    row-gap: 5vh;
+    padding: 3vh 0 3vh 0;
+}
+
+main[name*="about"] .flex-rowwrap section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+main[name*="about"] .flex-rowwrap img {
+    max-height: 4vh;
+    border-style: none;
+}
+
+.flex-rowwrap-projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    gap: 3vw;
+    row-gap: 2vh;
+    padding: 3vh 0 3vh 0;
+}
+
+table[name|="techniques"] {
+    background: linear-gradient(rgb(30, 30, 30) 0%, rgb(60, 60, 60) 100%);
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 6px;
+    padding: 1em;
+}
+
+table[name|="techniques"] thead th {
+    border-style: solid;
+    border-color: rgb(130, 130, 130);
+    border-width: 0.15em;
+    border-radius: 0.5em;
+    padding: 0.3em 0.5em 0.3em 0.5em;
+}
+
+table[name|="techniques"] tbody td {
+    border-style: solid;
+    border-color: rgb(130, 130, 130);
+    border-width: 0.15em;
+    border-radius: 0.5em;
+    padding: 0.4em 0.5em 0.4em 0.5em;
+}
+
+body[name*="projects"] main img {
+    border-style: ridge;
+    border-width: 0.4em;
+    border-color: rgb(130, 130, 130);
+}
+
+body[name*="projects"] main img:hover {
+    animation-name: proj-border-color-hover;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+
+footer {
+    background: linear-gradient(rgb(45, 45, 45) 15%, rgb(35, 35, 35) 85%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+}
+
+main[name*="techniques"] section[name="map"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body[name*="techniques"] section[name="gallery"] {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    gap: 1vw;
+    padding-top: 3em;
+    padding-bottom: 2em;
+}
+
+body[name*="techniques"] section[name="gallery"] figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body[name*="techniques"] section[name="gallery"] figure img {
+    width: 250px;
+    height: auto;
+}
+
+#inventory {
+    display: flex;
+    justify-content: center;
+}
+
+section[name="intro-video"] {
+    display: flex;
+    padding-top: 2em;
+    justify-content: center;
+}
+
+@keyframes link-text-color-hover {
+    0% { color: rgb(255, 190, 125); }
+    50% { color: rgb(248, 125, 0); }
+    100% { color: rgb(255, 190, 125); }
+}
+
+@keyframes nav-text-color-hover {
+    0% { color: whitesmoke; }
+    50% { color: rgb(220, 20, 20); }
+    100% { color: whitesmoke; }
+}
+
+@keyframes proj-border-color-hover {
+    0% { border-color: rgb(130, 130, 130); }
+    50% { border-color: rgb(120, 30, 30); }
+    100% { border-color: rgb(130, 130, 130); }
+}
+
+section[class="message-box"] {
+
+}
+
+section[class="message-box"] p {
+    box-sizing: border-box;
+    padding: 0.2em;
+}
+
+footer a button[type="button"] {
+    color: black
+}

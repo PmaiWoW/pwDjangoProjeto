@@ -1,0 +1,64 @@
+<!-- bruhh.html -->
+
+{% extends 'website/base.html' %}
+
+{% load static %}
+
+{% block header %}
+    <img src="{% static 'website/images/header-img.png' %}" alt="personimg">
+    <p>
+        &#x1F3AE John Doe, Junior Game Developer &#x1F3AE
+        <br><br>
+        temporaryemail.pw@gmail.com
+    </p>
+{% endblock %}
+
+{% block main %}
+    <section name="project-intro">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/r4fCNvlOl8c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <section>
+            <h2>Bruhh!</h2>
+            <p>
+                Once an archangel was bored, so he decided to gather the
+                greatest warriors of all time and made them fight to the
+                death in different battlefields such as a viking ship
+                during a storm, tokyo city in the year 2154, a tavern in
+                the 9th century, a modern business office, etc.<br>
+                When other angels heard of the newest gambling game in
+                heaven their reaction was unanimous: “Bruhh!”.
+            </p>
+        </section>
+    </section>
+    <section name="project-info">
+        <section name="info">
+            <p>
+                Bruhh! is a third-person ragdoll physics brawler for
+                Microsoft Windows PC.
+            </p>
+            <p>
+                Choose a homie to play with and are placed in an arena
+                of their choice with others players and/or bots. Use
+                objects and weapons located in the arena to battle each
+                other and defeat your fellow homies.
+            </p>
+        </section>
+        <section name="responsibility">
+            <h3>Responsibility:</h3>
+            <ul>
+                <li>Systems Programmer</li>
+            </ul>
+        </section>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    <a href="https://www.artstation.com/" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">view_in_ar</i>
+    </a>
+    <a href="contacts">
+        <i class="material-icons">email</i>
+    </a>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">photo_camera</i>
+    </a>
+{% endblock %}

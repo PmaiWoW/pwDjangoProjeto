@@ -1,0 +1,38 @@
+<!-- quiz.html -->
+
+{% extends 'website/secondary-base.html' %}
+
+{% load static %}
+
+{% block header %}
+    <img src="{% static 'website/images/header-img.png' %}" alt="personimg">
+    <p>
+        &#x1F3AE John Doe, Junior Game Developer &#x1F3AE
+        <br><br>
+        temporaryemail.pw@gmail.com
+    </p>
+{% endblock %}
+
+{% block main %}
+    <h3>Quiz Highscores</h3>
+    <p><a href="{% url 'website:quiz-scores' %}" class="btn btn-primary">All scores</a></p>
+    {% for quiz in quizzes %}
+        {% if forloop.counter <= 5   %}
+            <p>{{ quiz.first_name }} {{ quiz.last_name }} - Correct Answers: {{ quiz.correctAnswers }}</p>
+        {% endif %}
+    {% endfor %}
+    <a href="{% url 'website:do-quiz' %}" class="btn btn-success">Play Quiz!</a>
+
+{% endblock %}
+
+{% block footer %}
+    <a href="https://www.artstation.com/" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">view_in_ar</i>
+    </a>
+    <a href="contacts">
+        <i class="material-icons">email</i>
+    </a>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">photo_camera</i>
+    </a>
+{% endblock %}

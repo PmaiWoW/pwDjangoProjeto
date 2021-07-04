@@ -1,0 +1,152 @@
+<!-- about.html -->
+
+{% extends 'website/base.html' %}
+
+{% load static %}
+
+{% block header %}
+    <img src="{% static 'website/images/header-img.png' %}" alt="personimg">
+    <p>
+        &#x1F3AE John Doe, Junior Game Developer &#x1F3AE
+        <br><br>
+        temporaryemail.pw@gmail.com
+    </p>
+{% endblock %}
+
+{% block main %}
+    {% load static %}
+    <h3>Summary</h3>
+    <p>
+        I'm a Junior Video Game Developer based in Lisbon, Portugal
+        with a particular interest in 3D modeling, texturing and
+        animation, AI and VR, having participated in various educational
+        and academic projects, taking on various roles
+        such as 3D Artist and Animator, Programmer (gameplay, systems
+        and AI), Game Designer and UX Researcher.
+    </p>
+    <p>
+        Some projects I've worked on include:
+    </p>
+    <ul>
+        <li>Development of vertical slices for various games in the
+            context of curricular units of the Video Games Bachelor
+            at Universidade Lusófona de Humanidades e Tecnologias (ULHT).
+        </li>
+        <li>
+            The development of the search algorithm, and various
+            optimizations of it, for an A.I. agent entered in the
+            <a href="https://www.sciencedirect.com/science/article/pii/S2666920X21000084" target="_blank" rel="noopener noreferrer">
+                'ColorShapeLinks' board game A.I. international competition</a>,
+            hosted at the IEEE Conference on Games.
+        </li>
+        <li>
+            Co-authoring of the scientific paper
+            <a href="https://www.researchgate.net/publication/349214980_SimpAI_Evolutionary_Heuristics_for_the_ColorShapeLinks_Board_Game_Competition/citations?latestCitations=PB:349545785" target="_blank" rel="noopener noreferrer">
+                'SimpAI: Evolutionary Heuristics for the ColorShapeLinks
+                Board Game Competition'</a>, in which the team details
+            how the A.I. functions. Presented at IEEE Conference on Games
+            (2020), accepted and due to be published by Springer, ascience
+            and tech publisher.
+        </li>
+        <li>
+            Conduction of UX playtesting sessions, data analytics
+            and interpretation on the game 'OtherWorldly Math' while
+            authoring a scientific poster about the results obtained,
+            presenting the poster at the IEEE Conference on Games in 2020;
+        </li>
+    </ul>
+    <h3>Software & Skills</h3>
+    <section class="flex-rowwrap">
+        <section><img src="{% static 'website/images/software-icons/autodesk-maya.png' %}"><p>Autodesk Maya</p></section>
+        <section><img src="{% static 'website/images/software-icons/substance-painter.png' %}"><p>Substance Painter</p></section>
+        <section><img src="{% static 'website/images/software-icons/blender.png' %}"><p>Blender</p></section>
+        <section><img src="{% static 'website/images/software-icons/unity.png' %}"><p>Unity</p></section>
+        <section><img src="{% static 'website/images/software-icons/c-sharp.png' %}"><p>C#</p></section>
+        <section><img src="{% static 'website/images/software-icons/python.png' %}"><p>Python</p></section>
+        <section><img src="{% static 'website/images/software-icons/javascript.png' %}"><p>Javascript</p></section>
+        <section><img src="{% static 'website/images/software-icons/html.png' %}"><p>HTML</p></section>
+        <section><img src="{% static 'website/images/software-icons/css.png' %}"><p>CSS</p></section>
+        <section><img src="{% static 'website/images/software-icons/git.png' %}"><p>Git</p></section>
+    </section>
+
+    <h3>Experience</h3>
+    <h4>3D Modeling, Texturing and Animation:</h4>
+    <section>
+        <ul>
+            <li>(Solo assignment) Props + Prop animations.</li>
+            <li>(Group Assignment) Street environment - buildings and
+                appropriate props and their animations.</li>
+            <li>
+                (Group Assignment) Light sketches and final lighting for
+                the street created.
+            </li>
+            <li>(Solo assignment) Character modeling + Loop-able animation.</li>
+            <li>
+                (Workshop Attendee) Attended a workshop on non-destructive
+                3D modeling lectured by João Sapiro of Airborn Studios,
+                a 3D artist who produces outsource work for Activision
+                Blizzard.
+            </li>
+            <li>
+                (Workshop Attendee & Project) Blender & Substance Painter - Weapon
+                modeling and texturing.
+            </li>
+        </ul>
+    </section>
+    <h4>Programming</h4>
+    <section>
+        <ul>
+            <li>
+                (Group Projects) Gameplay/systems programmer on
+                various prototypes/vertical slices in the Video
+                Games Bachelor at ULHT, using Unity.
+            </li>
+            <li>
+                (Group Project) A.I. programmer, developing the search
+                search algorithm for a project. Later progressed
+                to the ColorShapeLinks competition.
+            </li>
+            <li>
+                (Group Project) IMDB Database console application, using
+                Linq, a SQL-like functionality of C#, to conduct queries
+                to retrieve data.
+            </li>
+            <li>
+                (Group Projects) Various projects that built a strong
+                understanding of the C# language and the pillars of
+                object oriented programming.
+            </li>
+            <li>
+                (Group/Solo Projects) Introductory curricular units
+                to Python built an understanding of the language's
+                functionalities and applications.
+            </li>
+            <li>
+                (Group/Solo Projects) Introductory curricular units
+                to Javascript built an understanding of the language's
+                functionalities and applications.
+            </li>
+            <li>
+                Currently learning web programming using HTML, CSS, Python
+                and Javascript, making use of prior and newly acquired
+                knowledge.
+            </li>
+            <li>
+                Use of Git for version control on the majority of the
+                programming based projects.
+            </li>
+        </ul>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    <a href="https://www.artstation.com/" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">view_in_ar</i>
+    </a>
+    <a href="contacts">
+        <i class="material-icons">email</i>
+    </a>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+        <i class="material-icons">photo_camera</i>
+    </a>
+{% endblock %}

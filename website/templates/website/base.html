@@ -1,0 +1,49 @@
+{%  load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="John Doe">
+        <meta name="description" content="Portfolio online">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        {%  load static %}
+        <link rel="stylesheet" href="{% static 'website/css/style.css' %}?{% now "U" %}">
+    </head>
+    <body name={{ bodyName }} class={{ bodyClass }}>
+        <nav>
+            <a href="{% url 'website:about' %}">About</a>
+            <a href="{% url 'website:projects' %}">Projects</a>
+            <a href="{% url 'website:contacts' %}">Contacts</a>
+            <a href="{% url 'website:techniques' %}">Techniques</a>
+            <a href="{% url 'website:quiz' %}">Quiz</a>
+            <a href="{% url 'website:comments' %}">Comments</a>
+            <a href={% url 'prices3D_SPA:price-guide-3d' %}>Prices</a>
+            {% if not home %}
+                <a href="{% url 'website:home' %}">Home</a>
+            {% endif %}
+        </nav>
+
+        <header class={{ headerClass }}>
+            {% block header %}
+            {% endblock header %}
+        </header>
+
+        <main name={{ mainName }}>
+            {% block main %}
+            {% endblock main %}
+        </main>
+
+        <footer>
+            <a href={% url 'users:login' %}>
+                <button type="button" class="btn btn-primary btn-sm" style="color:black">
+                    Log in
+                </button>
+            </a>
+            {% block footer %}
+            {% endblock footer %}
+        </footer>
+    </body>
+</html>
